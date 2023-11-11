@@ -1,0 +1,25 @@
+<mat-card >
+  <mat-card-content>
+    <form >
+      <div class="align-items-center">
+        <label  class="custom-field">
+          <input type="text" #brand  required>
+          <span class="placeholder">Brand</span>
+        </label>
+        <label  class="custom-field">
+          <input type="text" #model  required>
+          <span class="placeholder">Model</span>
+        </label>
+        <label  class="custom-field">
+          <input type="text" #color required>
+          <span class="placeholder">Color</span>
+        </label>
+        <button mat-raised-button color="primary" (click)="addCar(brand.value, model.value, color.value)" class="button" type="submit">Dodaj samochód</button>
+        <button mat-raised-button color="warn" (click)="exit()" class="button" type="reset">Anuluj</button>
+      </div>
+    </form>
+  </mat-card-content>
+
+
+</mat-card>
+

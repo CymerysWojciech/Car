@@ -1,0 +1,49 @@
+<div  class="heder">
+  <h1>Cars</h1 >
+  <button mat-mini-fab color="primary" (click)="showAddCar() "aria-label="Example icon button with a menu icon"  [disabled] = "showAddCarComponent" >
+    <mat-icon >add</mat-icon>
+  </button>
+</div>
+<div *ngIf="showAddCarComponent">
+  <app-add-car  (showAddCarComponent)="onShowAddCarComponent($event)"></app-add-car>
+</div>
+
+<table mat-table [dataSource]= "carsSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="brand">
+    <th mat-header-cell *matHeaderCellDef> Brand </th>
+    <td mat-cell *matCellDef="let element"> {{element.brand}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="model">
+    <th mat-header-cell *matHeaderCellDef> Model </th>
+    <td mat-cell *matCellDef="let element"> {{element.model}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="color">
+    <th mat-header-cell *matHeaderCellDef> Color </th>
+    <td mat-cell *matCellDef="let element"> {{element.color}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions" >
+    <th mat-header-cell *matHeaderCellDef> Akcja</th>
+    <td mat-cell *matCellDef="let element" >
+      <button mat-mini-fab color="primary" (click)="showEditCar(element)" aria-label="Example icon button with a menu icon">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-mini-fab color="warn" (click)="deleteCar(element)" aria-label="Example icon button with a menu icon">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

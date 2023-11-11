@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <h2>Edit</h2>
+  <form >
+    <div class="align-items-center">
+      <label  class="custom-field">
+        <input type="text" #brand  required value="{{data.brand}}">
+        <span class="placeholder">Brand</span>
+      </label>
+      <label  class="custom-field">
+        <input type="text" #model  required value="{{data.model}}">
+        <span class="placeholder">Model</span>
+      </label>
+      <label  class="custom-field">
+        <input type="text" #color required value="{{data.color}}">
+        <span class="placeholder">Color</span>
+      </label>
+      <div  class="button-wrapper">
+        <button mat-raised-button color="primary" (click)="editCar(brand.value, model.value, color.value)" class="button" type="submit">Zapisz</button>
+        <button mat-raised-button color="warn"  class="button"  mat-dialog-close  cdkFocusInitial>Anuluj</button>
+      </div>
+
+    </div>
+  </form>
+</div>
