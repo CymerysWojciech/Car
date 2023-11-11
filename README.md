@@ -1,4 +1,4 @@
-## ApiCar. Homework 4
+## Car. Homework 4
 [![Current Version](https://img.shields.io/badge/version-0.0.1-green.svg)](https://github.com/IgorAntun/node-chat)
 ### General info
 This is a homework for the course "Kurs Spring Boot 2: Tworzenie efektywnych aplikacji internetowych".
